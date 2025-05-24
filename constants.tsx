@@ -119,7 +119,6 @@ export const CERTIFICATES_DATA: Certificate[] = [
     title: "Finansial dan Investasi",
     description: "Mengenal dunia finansial mulai dari pentingnya investasi dan pengelolaan keuangan pribadi, hingga strategi investasi yang efektif.",
     imageUrl: "/assets/dikoding_finansial.jpeg",
-    tags: ["React", "Redux", "Frontend", "Nanodegree"],
     issuedBy: "DIKODiNG",
     certificateUrl: "https://www.dicoding.com/academies/852/corridor", // Example: link to a capstone project
   },
@@ -128,16 +127,15 @@ export const CERTIFICATES_DATA: Certificate[] = [
     title: "Python Dasar",
     description: "Belajar python dari dasar hingga mahir, mencakup sintaks dasar, struktur data, dan pemrograman berorientasi objek.",
     imageUrl: "/assets/dikoding_python_dasar.jpeg",
-    tags: ["CSS", "Sass", "Responsive Design", "Frontend"],
+    tags: ["Python", "Responsive Design", "Frontend"],
     issuedBy: "DIKODiNG",
     repoUrl: "https://github.com/auraauvarose/learn-python", // Example: link to a capstone project
   },
   {
     id: "c3",
     title: "Pemahaman Dasar Keamanan Siber",
-    description: "Mmeperlajari konsep dasar keamanan siber, termasuk ancaman umum, teknik pertahanan, dan praktik terbaik untuk melindungi data.",
+    description: "Memperlajari konsep dasar keamanan siber, termasuk ancaman umum, teknik pertahanan, dan praktik terbaik untuk melindungi data.",
     imageUrl: "/assets/pemahaman_dasar_security.jpeg",
-    tags: ["Full-Stack", "MERN", "Node.js", "MongoDB", "Bootcamp"],
     certificateUrl: "https://www.cyberacademy.id/login", // Example: link to a capstone project
   },
 ];
