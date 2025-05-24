@@ -58,18 +58,15 @@ export const CertificateIconSkill: React.FC<{ className?: string }> = ({ classNa
 
 
 export const PERSONAL_INFO: PersonalInfo = {
-  name: "Alex Doe",
-  title: "Senior Frontend Engineer & UI/UX Enthusiast",
-  tagline: "Crafting beautiful and intuitive digital experiences.",
+  name: "📰AURA😁",
+  title: "Manusia Biasa",
+  tagline: "Mari melangkah dengan percaya diri, Di dunia ilmu, kita berkreasi. Semangat membara, teruslah berlari, Kita bisa, masa depan berseri!",
   bio: [
-    "I'm a passionate Senior Frontend Engineer with a deep love for creating elegant, performant, and user-centric web applications. With over 7 years of experience in the field, I've honed my skills in React, TypeScript, and modern JavaScript frameworks, always striving to bridge the gap between intricate technical challenges and seamless user experiences.",
-    "My journey into tech was fueled by a fascination with how design and code can come together to solve real-world problems. I believe in a collaborative approach, working closely with designers, product managers, and backend teams to deliver high-quality products. I'm particularly interested in UI/UX design principles and how they can be leveraged to build applications that are not only functional but also delightful to use.",
-    "When I'm not coding, you can find me exploring the latest tech trends, contributing to open-source projects, or experimenting with new design tools. I'm always eager to learn and grow, and I'm excited about the future of web development."
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
   ],
   contact: {
-    email: "alex.doe@example.com",
-    linkedin: "https://linkedin.com/in/alexdoe",
-    github: "https://github.com/alexdoe",
+    email: "auraauvaroseendica@example.com",
+    github: "https://github.com/auraauvarose",
   },
   cvUrl: "/alex-doe-cv.pdf", // Placeholder
 };
@@ -85,31 +82,25 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const SKILLS_DATA: SkillCategory[] = [
   {
-    name: "Frontend Development",
+    name: "Development",
     skills: [
-      { name: "React", imageUrl: "https://picsum.photos/seed/reactlogo/200/200", description: "A JavaScript library for building user interfaces, maintained by Facebook and a community of individual developers and companies." },
-      { name: "TypeScript", imageUrl: "https://picsum.photos/seed/tslogo/200/200", description: "An open-source language which builds on JavaScript, by adding static type definitions." },
-      { name: "JavaScript (ESNext)", imageUrl: "https://picsum.photos/seed/jslogo/200/200", description: "A lightweight, interpreted, or just-in-time compiled programming language with first-class functions." },
-      { name: "Next.js", imageUrl: "https://picsum.photos/seed/nextjslogo/200/200", description: "An open-source React front-end development web framework that enables functionality such as server-side rendering and generating static websites." },
-      { name: "HTML5", imageUrl: "https://picsum.photos/seed/html5logo/200/200", description: "The standard markup language for documents designed to be displayed in a web browser." },
-      { name: "CSS3/Sass", imageUrl: "https://picsum.photos/seed/css3logo/200/200", description: "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. Sass is a preprocessor." },
-      { name: "Tailwind CSS", imageUrl: "https://picsum.photos/seed/tailwindlogo/200/200", description: "A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup." },
+      { name: "HTML5", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", description: "HTML 5 Digunakan untuk membuat konten dan struktur halaman web." },
+      { name: "CSS3", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", description: "CSS 3 Digunakan untuk mengatur tampilan dan desain halaman web." },
+      { name: "PYTHON", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg", description: "PYTHON saya pelajari karena ingin masuk didalam dunia mechine learning." },
     ],
   },
   {
-    name: "UI/UX Design",
+    name: "UI/UX Design And Video Editing",
     skills: [
-      { name: "Figma", imageUrl: "https://picsum.photos/seed/figmalogo/200/200", description: "A collaborative interface design tool. Create, test, and ship better designs from start to finish." },
-      { name: "Adobe XD", imageUrl: "https://picsum.photos/seed/adobexdlogo/200/200", description: "A vector-based user experience design tool for web apps and mobile apps, developed and published by Adobe Inc." },
-      { name: "User Research", description: "The systematic investigation of users and their requirements, to add context and insight into the process of designing the user experience." },
-      { name: "Wireframing", description: "A way to design a website service at the structural level. A wireframe is commonly used to lay out content and functionality on a page." },
+      { name: "Figma", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", description: "Sebenarnya saya belum mengenal Figma, tapi saya sudah terbiasa dengan Adobe XD." },
+      { name: "Adobe Premiere Pro", imageUrl: "https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white", description: "Saya juga jago dalam mengedit video menggunakan Adobe Premiere Pro." },
+
     ],
   },
   {
     name: "Backend & Databases",
     skills: [
       { name: "Node.js", imageUrl: "https://picsum.photos/seed/nodelogo/200/200", description: "An open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser." },
-      { name: "Express.js", description: "A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications." },
       { name: "Python", imageUrl: "https://picsum.photos/seed/pythonlogo/200/200", description: "An interpreted, high-level and general-purpose programming language." },
     ],
   },
@@ -117,7 +108,6 @@ export const SKILLS_DATA: SkillCategory[] = [
     name: "Tools & DevOps",
     skills: [
       { name: "Git & GitHub", imageUrl: "https://picsum.photos/seed/githublogo/200/200", description: "Git is a distributed version-control system for tracking changes in source code during software development. GitHub is a provider of Internet hosting for software development and version control using Git." },
-      { name: "Docker", imageUrl: "https://picsum.photos/seed/dockerlogo/200/200", description: "A set of platform as a service products that use OS-level virtualization to deliver software in packages called containers." },
     ],
   },
 ];
@@ -131,7 +121,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     imageUrl: "/assets/dikoding_finansial.jpeg",
     tags: ["React", "Redux", "Frontend", "Nanodegree"],
     issuedBy: "DIKODiNG",
-    repoUrl: "", // Example: link to a capstone project
+    certificateUrl: "https://www.dicoding.com/academies/852/corridor", // Example: link to a capstone project
   },
   {
     id: "c2",
@@ -140,7 +130,6 @@ export const CERTIFICATES_DATA: Certificate[] = [
     imageUrl: "/assets/dikoding_python_dasar.jpeg",
     tags: ["CSS", "Sass", "Responsive Design", "Frontend"],
     issuedBy: "DIKODiNG",
-    certificateUrl: "#",
     repoUrl: "https://github.com/auraauvarose/learn-python", // Example: link to a capstone project
   },
   {
@@ -149,47 +138,32 @@ export const CERTIFICATES_DATA: Certificate[] = [
     description: "Mmeperlajari konsep dasar keamanan siber, termasuk ancaman umum, teknik pertahanan, dan praktik terbaik untuk melindungi data.",
     imageUrl: "/assets/pemahaman_dasar_security.jpeg",
     tags: ["Full-Stack", "MERN", "Node.js", "MongoDB", "Bootcamp"],
-    repoUrl: "#", // Example: link to a capstone project
+    certificateUrl: "https://www.cyberacademy.id/login", // Example: link to a capstone project
   },
 ];
 
 export const EXPERIENCE_DATA: Experience[] = [
   {
     id: "e1",
-    role: "Senior Frontend Engineer",
-    company: "Innovatech Solutions Inc.",
-    duration: "Jan 2021 - Present",
+    role: "Desain Komunikasi Visual",
+    company: "-",
+    duration: "2021 - 2025",
     responsibilities: [
-      "Led the development of key features for a flagship SaaS product, improving user engagement by 25%.",
-      "Architected and implemented a scalable component library using React and TypeScript, reducing development time by 30%.",
-      "Mentored junior engineers and conducted code reviews to ensure high-quality standards.",
-      "Collaborated with UI/UX designers to translate mockups and prototypes into responsive web interfaces.",
+      "Belajar mendesain komunikasi visual yang efektif untuk berbagai media.",
+      "Menguasai prinsip-prinsip desain grafis, tipografi, dan warna.",
+      "Video editing untuk membuat konten visual yang menarik.",
+      "Bekerja dengan tim kreatif untuk mengembangkan konsep desain.",
     ],
-    logoUrl: "https://picsum.photos/seed/innovatech/50/50",
+    logoUrl: "/assets/profile.jpg",
   },
   {
     id: "e2",
-    role: "Frontend Developer",
-    company: "WebWorks Co.",
-    duration: "Jun 2018 - Dec 2020",
+    role: "-",
+    company: "???",
+    duration: "2025 - ...",
     responsibilities: [
-      "Developed and maintained responsive websites and web applications for various clients.",
-      "Integrated third-party APIs and services to enhance application functionality.",
-      "Participated in agile development cycles, including sprint planning and daily stand-ups.",
-      "Optimized web performance, achieving significant improvements in load times.",
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     ],
-    logoUrl: "https://picsum.photos/seed/webworks/50/50",
-  },
-  {
-    id: "e3",
-    role: "Junior Web Developer",
-    company: "Startup X",
-    duration: "Jul 2016 - May 2018",
-    responsibilities: [
-      "Assisted in the development of the company's main web portal using HTML, CSS, and JavaScript.",
-      "Gained experience with version control systems like Git.",
-      "Contributed to bug fixing and feature enhancements.",
-    ],
-    logoUrl: "https://picsum.photos/seed/startupx/50/50",
+    logoUrl: "/assets/profile.jpg",
   },
 ];
