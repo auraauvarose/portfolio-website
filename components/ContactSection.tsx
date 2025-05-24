@@ -41,13 +41,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id, email, linkedIn, gi
   const isParaVisible = useIntersectionObserver(paraRef, { threshold: 0.5 }); // triggerOnce is false by default
   
   return (
-    <Section id={id} title="Get In Touch" className="bg-primary dark:bg-primary-dark transition-colors duration-300">
+    <Section id={id} title="HUBUNGI SAYA" className="bg-primary dark:bg-primary-dark transition-colors duration-300">
       <div className="max-w-xl mx-auto text-center">
         <p 
           ref={paraRef}
           className={`text-lg text-text-secondary dark:text-text-secondary-dark mb-8 transition-all duration-500 ease-out ${isParaVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-3'}`}
         >
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Feel free to reach out!
+          Aku sangat senang mendengar darimu! Jika kamu memiliki pertanyaan, ingin berkolaborasi, atau hanya ingin menyapa, jangan ragu untuk menghubungiku melalui email atau media sosial di bawah ini.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-8">
           <AnimatedContactLink
@@ -55,13 +55,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id, email, linkedIn, gi
             icon={<EmailIcon className="w-7 h-7 mr-3" />}
             text={email}
             animationDelay="0.1s"
-          />
-          <AnimatedContactLink
-            href={linkedIn}
-            icon={<LinkedInIcon className="w-7 h-7 mr-3" />}
-            text="LinkedIn"
-            animationDelay="0.2s"
-            isExternal
           />
           <AnimatedContactLink
             href={github}

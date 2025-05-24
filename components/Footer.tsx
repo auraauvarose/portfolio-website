@@ -13,7 +13,7 @@ const Footer: React.FC<FooterProps> = ({ name }) => {
           &copy; {currentYear} {name}. All rights reserved.
         </p>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-          Crafted with <span className="text-red-500 animate-pulse">❤</span> using React, TypeScript & Tailwind CSS.
+          Crafted with <span className="text-red-500 animate-pulse">❤</span> by {name}
         </p>
       </div>
     </footer>
