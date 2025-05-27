@@ -34,9 +34,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id, email, linkedIn, gi
           </p>
         </div>
         <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
           onSubmit={handleSubmit}
           className="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-xl space-y-6"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <h3 className="text-xl font-semibold text-accent dark:text-accent-dark mb-4 text-center">Kirim Pesan</h3>
           <div>
             <label className="block text-sm font-semibold mb-2 text-accent dark:text-accent-dark" htmlFor="name">
