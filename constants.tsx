@@ -127,7 +127,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     title: "Python Dasar",
     description: "Belajar python dari dasar hingga mahir, mencakup sintaks dasar, struktur data, dan pemrograman berorientasi objek.",
     imageUrl: "/assets/dikoding_python_dasar.jpeg",
-    tags: ["Python", "Responsive Design", "Frontend"],
+    tags: ["Python", "machine learning"],
     issuedBy: "DIKODiNG",
     repoUrl: "https://github.com/auraauvarose/learn-python", // Example: link to a capstone project
   },
