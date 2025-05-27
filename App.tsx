@@ -1,15 +1,14 @@
-
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
 import CertificatesSection from './components/ProjectsSection'; // Corrected import path to actual file
 import ExperienceSection from './components/ExperienceSection';
-import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen'; // Import LoadingScreen
 import { NAV_ITEMS, PERSONAL_INFO, SKILLS_DATA, CERTIFICATES_DATA, EXPERIENCE_DATA } from './constants'; // Updated constant name
+import ContactSection from './components/ContactSection';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('home');
@@ -70,7 +69,13 @@ const App: React.FC = () => {
         <SkillsSection id="skills" skillsData={SKILLS_DATA} /> {/* Prop name updated for clarity */}
         <CertificatesSection id="certificates" certificates={CERTIFICATES_DATA} /> {/* Updated component and prop */}
         <ExperienceSection id="experience" experiences={EXPERIENCE_DATA} />
-        <ContactSection id="contact" email={PERSONAL_INFO.contact.email} linkedIn={PERSONAL_INFO.contact.linkedin} github={PERSONAL_INFO.contact.github} />
+        {/* Ganti/komentari ContactSection jika ingin pakai MenuContact */}
+        <ContactSection
+          id="contact"
+          email={PERSONAL_INFO.contact.email}
+          linkedIn={PERSONAL_INFO.contact.linkedin}
+          github={PERSONAL_INFO.contact.github}
+        />
       </main>
       <Footer name={PERSONAL_INFO.name}/>
     </div>
