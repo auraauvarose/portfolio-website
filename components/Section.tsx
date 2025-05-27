@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import { motion, useInView } from 'framer-motion';
 
 interface SectionProps {
   id: string;
@@ -8,55 +8,54 @@ interface SectionProps {
   className?: string;
   titleClassName?: string;
   contentClassName?: string;
-  observeTitle?: boolean; 
+  observeTitle?: boolean;
 }
 
-const Section: React.FC<SectionProps> = ({ 
-  id, 
-  title, 
-  children, 
-  className = "", 
-  titleClassName = "", 
+const Section: React.FC<SectionProps> = ({
+  id,
+  title,
+  children,
+  className = "",
+  titleClassName = "",
   contentClassName = "",
-  observeTitle = true 
+  observeTitle = true
 }) => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
-  
-  // triggerOnce is false by default in useIntersectionObserver now
-  const isSectionVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
-  const isTitleVisible = observeTitle 
-    ? useIntersectionObserver(titleRef, { threshold: 0.25 }) 
-    : isSectionVisible;
 
-  // For children container, use section visibility to start its animation
-  const isContentContainerVisible = useIntersectionObserver(sectionRef, {threshold: 0.15 });
-
+  const isSectionInView = useInView(sectionRef, { once: true, amount: 0.1 });
+  const isTitleInView = useInView(titleRef, { once: true, amount: 0.25 });
+  const isContentInView = useInView(sectionRef, { once: true, amount: 0.15 });
 
   return (
-    <section 
-      id={id} 
+    <motion.section
+      id={id}
       ref={sectionRef}
-      className={`py-16 md:py-24 ${className} transition-opacity duration-500 ${isSectionVisible ? 'opacity-100' : 'opacity-0'}`}
-      // Add a key that changes with visibility to force re-render for re-animation if pure CSS class toggling isn't enough
-      // key={id + (isSectionVisible ? '-visible' : '-hidden')} 
+      initial={{ opacity: 0 }}
+      animate={isSectionInView ? { opacity: 1 } : {}}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className={`py-16 md:py-24 ${className}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 
+        <motion.h2
           ref={titleRef}
-          className={`text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-accent dark:text-accent-dark ${titleClassName} ${isTitleVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+          initial={{ y: 40, opacity: 0 }}
+          animate={isTitleInView ? { y: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className={`text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-accent dark:text-accent-dark ${titleClassName}`}
         >
           {title}
-        </h2>
-        {/* The direct children passed to Section are usually animated by themselves if they are lists of cards etc.
-            This contentClassName is for the wrapper around those children if needed.
-            The animation for children (like cards in a grid) is handled by their own useIntersectionObserver hooks.
-        */}
-        <div className={`${contentClassName} ${isContentContainerVisible ? '' : 'opacity-0'}`}>
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isContentInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className={contentClassName}
+        >
           {children}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

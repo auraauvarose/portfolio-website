@@ -55,7 +55,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({ certificate, animatio
                 className="inline-flex items-center text-accent dark:text-accent-dark hover:text-accent-hover dark:hover:text-accent-hover-dark font-medium transition-colors duration-300 text-sm"
                 aria-label={`View certificate for ${certificate.title}`}
               >
-                View Certificate <ExternalLinkIcon />
+                Link <ExternalLinkIcon />
               </a>
             )}
             {certificate.liveUrl && (
@@ -89,7 +89,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({ certificate, animatio
           <img 
             src={certificate.imageUrl} 
             alt={certificate.title} 
-            className="max-w-full max-h-[80vh] w-auto h-auto object-contain rounded-lg" 
+            className="max-w-full max-h-[90vh] w-auto h-auto object-contain rounded-lg" 
           />
         </Modal>
       )}

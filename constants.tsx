@@ -119,6 +119,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     title: "Finansial dan Investasi",
     description: "Mengenal dunia finansial mulai dari pentingnya investasi dan pengelolaan keuangan pribadi, hingga strategi investasi yang efektif.",
     imageUrl: "/assets/dikoding_finansial.jpeg",
+    tags: [],
     issuedBy: "DIKODiNG",
     certificateUrl: "https://www.dicoding.com/academies/852/corridor", // Example: link to a capstone project
   },
@@ -135,6 +136,7 @@ export const CERTIFICATES_DATA: Certificate[] = [
     id: "c3",
     title: "Pemahaman Dasar Keamanan Siber",
     description: "Memperlajari konsep dasar keamanan siber, termasuk ancaman umum, teknik pertahanan, dan praktik terbaik untuk melindungi data.",
+    tags: [],
     imageUrl: "/assets/pemahaman_dasar_security.jpeg",
     certificateUrl: "https://www.cyberacademy.id/login", // Example: link to a capstone project
   },

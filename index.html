@@ -6,6 +6,7 @@
     <title>Modern Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="/assets/profile.jpg">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
     <script>
       tailwind.config = {
         darkMode: 'class', // Enable class-based dark mode
@@ -15,29 +16,29 @@
               // Light Theme Colors
               'primary': '#F8FAFC',        // Light background (slate-50)
               'secondary': '#FFFFFF',      // Light secondary/card (white)
-              'accent': '#0EA5E9',         // Light accent (sky-500)
-              'accent-hover': '#0284C7',   // Light accent hover (sky-600)
-              'text-primary': '#0F172A',   // Light text (slate-900)
-              'text-secondary': '#475569', // Light muted text (slate-600)
+              'accent': '#181C14',         // Light accent (sky-500)
+              'accent-hover': '#181C14',   // Light accent hover (sky-600)
+              'text-primary': '#38BDF8',   // Light text (slate-900)
+              'text-secondary': '#181C14', // Light muted text (slate-600)
 
               // Dark Theme Colors
-              'primary-dark': '#0F172A',      // slate-900
-              'secondary-dark': '#1E293B',    // slate-800
+              'primary-dark': '#181C14',      // slate-900
+              'secondary-dark': '#1E201E',    // slate-800
               'accent-dark': '#38BDF8',       // sky-400
-              'accent-hover-dark': '#0EA5E9', // sky-500
+              'accent-hover-dark': '#4B70F5', // sky-500
               'text-primary-dark': '#F1F5F9', // slate-100
-              'text-secondary-dark': '#94A3B8',// slate-400
+              'text-secondary-dark': '#F1F5F9',// slate-400
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
             },
             animation: {
               'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-              'pulse-slow': 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'pulse-slow': 'pulse 5.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             },
             keyframes: {
               fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '0%': { opacity: '15', transform: 'translateY(5px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
               },
             }
@@ -48,7 +49,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0"
+  }
+}
+</script>
   <style>
     body {
       cursor: none; /* Hide default cursor */
@@ -62,7 +71,7 @@
       z-index: 9999;
       mix-blend-mode: difference; /* Adapts color based on background */
       background-color: #ffffff; /* White, will be inverted on dark bg */
-      transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), width 0.2s ease, height 0.2s ease;
+      transition: transform 0.20s cubic-bezier(0.25, 0.46, 0.45, 0.94), width 0.2s ease, height 0.2s ease;
       will-change: transform; /* Optimize for transform changes */
     }
     .custom-cursor.pointer {
@@ -104,19 +113,9 @@
       100% { transform: rotate(360deg); }
     }
   </style>
-
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "react": "https://esm.sh/react@^19.1.0"
-  }
-}
-</script>
-  <script type="module" crossorigin src="script.js"></script>
 </head>
   <body class="bg-primary dark:bg-primary-dark text-text-primary dark:text-text-primary-dark font-sans transition-colors duration-300">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html><link rel="stylesheet" href="index.css">

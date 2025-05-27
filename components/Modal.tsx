@@ -53,7 +53,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
     >
       <div 
         ref={modalRef}
-        className="bg-secondary dark:bg-secondary-dark rounded-xl shadow-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative transition-transform duration-300 transform scale-95 group-hover:scale-100"
+        className="bg-secondary dark:bg-secondary-dark rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative transition-transform duration-300 transform scale-95 group-hover:scale-100"
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal content
         tabIndex={-1} // Make it focusable
       >
