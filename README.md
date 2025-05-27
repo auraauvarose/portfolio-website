@@ -1,18 +1,16 @@
-# Run and deploy your AI Studio app
+# Run and deploy potrfolio
 
 This contains everything you need to run your app locally.
 
 ## Run Locally
-
 **Prerequisites:**  Node.js
-
-
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Run the app:
    `npm run dev`
 
-# Merubah file tsx menjadi js
+## Merubah file tsx menjadi js
 
 1. npm run build 
+
+
