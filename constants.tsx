@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavItem, Certificate, SkillCategory, Experience, PersonalInfo, Skill } from './types'; // Certificate, Skill updated
 
+
 export const MenuIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -93,21 +94,26 @@ export const SKILLS_DATA: SkillCategory[] = [
     name: "UI/UX Design And Video Editing",
     skills: [
       { name: "Figma", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", description: "Sebenarnya saya belum mengenal Figma, tapi saya sudah terbiasa dengan Adobe XD." },
-      { name: "Adobe Premiere Pro", imageUrl: "https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white", description: "Saya juga jago dalam mengedit video menggunakan Adobe Premiere Pro." },
+      { name: "Adobe Premiere Pro", imageUrl: "/assets/images_skill/adobe-premiere-pro.png", description: "Saya juga jago dalam mengedit video menggunakan Adobe Premiere Pro." },
+      { name: "Adobe Photoshop", imageUrl: "/assets/images_skill/photoshop.png", description: "Adobe Photoshop Digunakan untuk mengedit dan memanipulasi gambar." },
+      { name: "CorelDRAW", imageUrl: "/assets/images_skill/corel-draw.png", description: "CorelDRAW Digunakan untuk desain grafis, ilustrasi, dan tata letak halaman." },
+      { name: "CapCut", imageUrl: "/assets/images_skill/capcut.png", description: "CapCut Digunakan untuk mengedit video dengan fitur yang mudah digunakan." },
+      { name: "Canva", imageUrl: "/assets/images_skill/canva.png", description: "Canva Digunakan untuk membuat desain grafis dengan mudah." },
+
 
     ],
   },
   {
     name: "Backend & Databases",
     skills: [
-      { name: "Node.js", imageUrl: "https://picsum.photos/seed/nodelogo/200/200", description: "An open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser." },
-      { name: "Python", imageUrl: "https://picsum.photos/seed/pythonlogo/200/200", description: "An interpreted, high-level and general-purpose programming language." },
+      { name: "-", imageUrl: "https://picsum.photos/seed/nodelogo/200/200", description: "Belum Mencoba Backend maupun Databases." },
     ],
   },
   {
     name: "Tools & DevOps",
     skills: [
-      { name: "Git & GitHub", imageUrl: "https://picsum.photos/seed/githublogo/200/200", description: "Git is a distributed version-control system for tracking changes in source code during software development. GitHub is a provider of Internet hosting for software development and version control using Git." },
+      { name: "Git", imageUrl: "/assets/images_skill/git.png", description: "Git Digunakan untuk mengelola versi proyek dan menyimpan perubahan." },
+      { name: "GitHub", imageUrl: "/assets/images_skill/github.png", description: "GitHub Digunakan untuk menyimpan dan kolaborasi kode proyek." },
     ],
   },
 ];
