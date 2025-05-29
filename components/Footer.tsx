@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface FooterProps {
   name: string;
@@ -6,6 +6,15 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ name }) => {
   const currentYear = new Date().getFullYear();
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Ganti 'portfolio-unique-key' dengan nama unik untuk websitemu
+    fetch('https://api.countapi.xyz/hit/portfolio-unique-key/visits')
+      .then(res => res.json())
+      .then(data => setVisitorCount(data.value));
+  }, []);
+
   return (
     <footer className="bg-secondary dark:bg-secondary-dark py-8 text-center transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,6 +23,9 @@ const Footer: React.FC<FooterProps> = ({ name }) => {
         </p>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
           Crafted with <span className="text-red-500 animate-pulse">❤</span> by {name}
+        </p>
+        <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
+          Website dibuka <span>{visitorCount !== null ? visitorCount : '...'}</span> kali.
         </p>
       </div>
     </footer>
