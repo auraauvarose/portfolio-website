@@ -3,6 +3,8 @@ import Section from './Section';
 import { EmailIcon, GitHubIcon } from '../constants';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxhX70vdyV-y-VGD0zq1ob2mozLzW0chwX4kw4x5BsCyNdH8wr1AJ1gi6IWf7mTbSPBRQ/exec"; // Ganti dengan URL Web App kamu
+
 interface ContactSectionProps {
   id: string;
   email: string;
@@ -16,10 +18,30 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id, email, linkedIn, gi
 
   // State untuk form pesan
   const [sent, setSent] = useState(false);
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    // Tambahkan logic kirim pesan di sini jika perlu
+    setLoading(true);
+    const form = e.currentTarget;
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      });
+      setSent(true);
+      alert("Pesan berhasil dikirim!");
+      form.reset();
+    } catch (err) {
+      alert("Gagal mengirim pesan!");
+    }
+    setLoading(false);
   };
 
   return (
@@ -34,13 +56,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id, email, linkedIn, gi
           </p>
         </div>
         <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
           onSubmit={handleSubmit}
           className="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-xl space-y-6"
         >
-          <input type="hidden" name="form-name" value="contact" />
           <h3 className="text-xl font-semibold text-accent dark:text-accent-dark mb-4 text-center">Kirim Pesan</h3>
           <div>
             <label className="block text-sm font-semibold mb-2 text-accent dark:text-accent-dark" htmlFor="name">
@@ -83,10 +101,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id, email, linkedIn, gi
           </div>
           <button
             type="submit"
+            disabled={loading || sent}
             className="w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300"
-            disabled={sent}
           >
-            {sent ? "Terkirim!" : "Kirim Pesan"}
+            {loading ? "Mengirim..." : sent ? "Terkirim!" : "Kirim Pesan"}
           </button>
           {sent && (
             <p className="text-green-600 text-center mt-2">Pesan kamu sudah terkirim. Terima kasih!</p>
