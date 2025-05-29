@@ -29,7 +29,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id, email, linkedIn, gi
     try {
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        body: formData, // langsung kirim FormData, JANGAN set headers
+        body: new FormData(form), // TANPA headers
       });
       setSent(true);
       alert("Pesan berhasil dikirim!");
