@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { NavItem } from '../types';
 import { MenuIcon, CloseIcon, SunIcon, MoonIcon } from '../constants';
 import { ThemeContext } from '../contexts/ThemeContext';
+import MusicToggle from './MusicToggle';
 
 interface NavbarProps {
   navItems: NavItem[];
@@ -71,6 +72,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, name, activeSectionId }) => {
                 </a>
               ))}
             </div>
+            <MusicToggle />
             <button
               onClick={toggleTheme}
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
@@ -80,7 +82,8 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, name, activeSectionId }) => {
             </button>
           </div>
           <div className="md:hidden flex items-center">
-             <button
+            <MusicToggle />
+            <button
               onClick={toggleTheme}
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
               className="mr-2 p-2 rounded-full text-text-secondary dark:text-text-secondary-dark hover:text-accent dark:hover:text-accent-dark focus:outline-none"
