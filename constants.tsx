@@ -59,7 +59,7 @@ export const CertificateIconSkill: React.FC<{ className?: string }> = ({ classNa
 
 
 export const PERSONAL_INFO: PersonalInfo = {
-  name: "AURA😁",
+  name: "Aura^_~",
   title: "Manusia Biasa",
   tagline: "Mari melangkah dengan percaya diri, Di dunia ilmu, kita berkreasi. Semangat membara, teruslah berlari, Kita bisa, masa depan berseri!",
   bio: [

@@ -10,7 +10,7 @@ const Footer: React.FC<FooterProps> = ({ name }) => {
 
   useEffect(() => {
     // Ganti 'portfolio-unique-key' dengan nama unik untuk websitemu
-    fetch('https://api.countapi.xyz/hit/portfolio-unique-key/visits')
+    fetch('https://api.countapi.xyz/hit/my-portfolio-2025/visits')
       .then(res => res.json())
       .then(data => setVisitorCount(data.value));
   }, []);
