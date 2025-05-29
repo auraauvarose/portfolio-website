@@ -17,6 +17,17 @@ const MusicToggle: React.FC = () => {
     }
   }, [playing]);
 
+  useEffect(() => {
+    const tryPlay = () => {
+      if (audioRef.current && playing) {
+        audioRef.current.play().catch(() => {});
+      }
+      window.removeEventListener("click", tryPlay);
+    };
+    window.addEventListener("click", tryPlay);
+    return () => window.removeEventListener("click", tryPlay);
+  }, [playing]);
+
   return (
     <div>
       <button
