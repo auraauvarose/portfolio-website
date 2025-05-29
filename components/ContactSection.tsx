@@ -3,7 +3,7 @@ import Section from './Section';
 import { EmailIcon, GitHubIcon } from '../constants';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxhX70vdyV-y-VGD0zq1ob2mozLzW0chwX4kw4x5BsCyNdH8wr1AJ1gi6IWf7mTbSPBRQ/exec"; // Ganti dengan URL Web App kamu
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbykSung6504H7TmPc_pDGroyRUXNuP3twnTC5Y4VZaaKERcMyIsZJJdAGvQ1DR6OBDzNg/exec"; // Ganti dengan URL Web App kamu
 
 interface ContactSectionProps {
   id: string;
