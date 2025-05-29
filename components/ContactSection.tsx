@@ -24,16 +24,12 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id, email, linkedIn, gi
     e.preventDefault();
     setLoading(true);
     const form = e.currentTarget;
-    const formData = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
+    const formData = new FormData(form);
+
     try {
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        body: JSON.stringify(formData),
-        headers: { "Content-Type": "application/json" },
+        body: formData, // langsung kirim FormData, JANGAN set headers
       });
       setSent(true);
       alert("Pesan berhasil dikirim!");
