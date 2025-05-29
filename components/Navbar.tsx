@@ -58,40 +58,42 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, name, activeSectionId }) => {
               {name.split(' ')[0]}<span className="text-text-primary dark:text-text-primary-dark">{name.split(' ')[1]}</span>
             </a>
           </div>
-          <MusicToggle />
-          <div className="hidden md:flex items-center">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={`#${item.sectionId}`}
-                  onClick={(e) => { e.preventDefault(); scrollToSection(item.sectionId); }}
-                  className={navLinkClasses(item.sectionId)}
-                  aria-current={activeSectionId === item.sectionId ? 'page' : undefined}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-            <button
-              onClick={toggleTheme}
-              aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-              className="ml-6 p-2 rounded-full text-text-secondary dark:text-text-secondary-dark hover:text-accent dark:hover:text-accent-dark hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent dark:focus:ring-accent-dark"
-            >
-              {theme === 'light' ? <MoonIcon className="w-5 h-5" /> : <SunIcon className="w-5 h-5" />}
-            </button>
+          {/* Tambahkan ini untuk menu desktop */}
+          <div className="hidden md:flex items-center gap-x-2">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={`#${item.sectionId}`}
+                onClick={(e) => { e.preventDefault(); scrollToSection(item.sectionId); }}
+                className={navLinkClasses(item.sectionId)}
+                aria-current={activeSectionId === item.sectionId ? 'page' : undefined}
+              >
+                {item.name}
+              </a>
+            ))}
           </div>
-          <div className="md:hidden flex items-center">
+          <div className="flex items-center gap-x-2">
+            <MusicToggle />
+            {/* Theme toggle desktop */}
             <button
               onClick={toggleTheme}
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-              className="mr-2 p-2 rounded-full text-text-secondary dark:text-text-secondary-dark hover:text-accent dark:hover:text-accent-dark focus:outline-none"
+              className="hidden md:inline-flex ml-6 p-2 rounded-full text-text-secondary dark:text-text-secondary-dark hover:text-accent dark:hover:text-accent-dark hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent dark:focus:ring-accent-dark"
             >
               {theme === 'light' ? <MoonIcon className="w-5 h-5" /> : <SunIcon className="w-5 h-5" />}
             </button>
+            {/* Theme toggle mobile */}
+            <button
+              onClick={toggleTheme}
+              aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+              className="md:hidden p-2 rounded-full text-text-secondary dark:text-text-secondary-dark hover:text-accent dark:hover:text-accent-dark focus:outline-none"
+            >
+              {theme === 'light' ? <MoonIcon className="w-5 h-5" /> : <SunIcon className="w-5 h-5" />}
+            </button>
+            {/* Hamburger menu mobile */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="ml-4 text-text-secondary dark:text-text-secondary-dark hover:text-accent dark:hover:text-accent-dark p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent dark:focus:ring-accent-dark"
+              className="md:hidden p-2 rounded-md text-text-secondary dark:text-text-secondary-dark hover:text-accent dark:hover:text-accent-dark focus:outline-none"
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
             >
