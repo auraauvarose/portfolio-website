@@ -58,6 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, name, activeSectionId }) => {
               {name.split(' ')[0]}<span className="text-text-primary dark:text-text-primary-dark">{name.split(' ')[1]}</span>
             </a>
           </div>
+          <MusicToggle />
           <div className="hidden md:flex items-center">
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
@@ -72,7 +73,6 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, name, activeSectionId }) => {
                 </a>
               ))}
             </div>
-            <MusicToggle />
             <button
               onClick={toggleTheme}
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
@@ -82,7 +82,6 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, name, activeSectionId }) => {
             </button>
           </div>
           <div className="md:hidden flex items-center">
-            <MusicToggle />
             <button
               onClick={toggleTheme}
               aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
@@ -92,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, name, activeSectionId }) => {
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-text-secondary dark:text-text-secondary-dark hover:text-accent dark:hover:text-accent-dark p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent dark:focus:ring-accent-dark"
+              className="ml-4 text-text-secondary dark:text-text-secondary-dark hover:text-accent dark:hover:text-accent-dark p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent dark:focus:ring-accent-dark"
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
             >
