@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { db, ref, get, set } from '../firebase'; // Adjust the import path as necessary
 
 interface FooterProps {
   name: string;
@@ -9,9 +10,14 @@ const Footer: React.FC<FooterProps> = ({ name }) => {
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch('https://countapi.dev/hit/my-portfolio-2025/visits')
-      .then(res => res.json())
-      .then(data => setVisitorCount(data.value));
+    const counterRef = ref(db, 'visitorCount');
+    get(counterRef)
+      .then(snapshot => {
+        let count = snapshot.exists() ? snapshot.val() : 0;
+        // increment
+        set(counterRef, count + 1).then(() => setVisitorCount(count + 1));
+      })
+      .catch(() => setVisitorCount(null));
   }, []);
 
   return (
