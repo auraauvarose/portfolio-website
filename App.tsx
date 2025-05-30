@@ -62,7 +62,12 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-primary dark:bg-primary-dark transition-colors duration-300">
-      <Navbar navItems={NAV_ITEMS} name={PERSONAL_INFO.name} activeSectionId={activeSection} />
+      <Navbar
+        navItems={NAV_ITEMS}
+        name={PERSONAL_INFO.name}          // Nama untuk halaman/page
+        navbarName="PORTFOLIO"             // Nama khusus untuk Navbar (ganti sesuai keinginan)
+        activeSectionId={activeSection}
+      />
       <main className="flex-grow">
         <HeroSection id="home" name={PERSONAL_INFO.name} title={PERSONAL_INFO.title} tagline={PERSONAL_INFO.tagline} />
         <AboutSection id="about" bio={PERSONAL_INFO.bio} />

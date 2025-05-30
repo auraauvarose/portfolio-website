@@ -6,11 +6,12 @@ import MusicToggle from './MusicToggle';
 
 interface NavbarProps {
   navItems: NavItem[];
-  name: string;
+  name: string;         // Nama untuk halaman/page
+  navbarName: string;   // Nama khusus untuk Navbar
   activeSectionId: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ navItems, name, activeSectionId }) => {
+const Navbar: React.FC<NavbarProps> = ({ navItems, name, navbarName, activeSectionId }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -54,8 +55,12 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, name, activeSectionId }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="text-2xl font-bold text-accent dark:text-accent-dark hover:text-accent-hover dark:hover:text-accent-hover-dark transition-colors">
-              {name.split(' ')[0]}<span className="text-text-primary dark:text-text-primary-dark">{name.split(' ')[1]}</span>
+            <a
+              href="#home"
+              onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
+              className="text-2xl font-bold text-accent dark:text-accent-dark hover:text-accent-hover dark:hover:text-accent-hover-dark transition-colors"
+            >
+              {navbarName}
             </a>
           </div>
           {/* Tambahkan ini untuk menu desktop */}

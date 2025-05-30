@@ -16,7 +16,7 @@
               // Light Theme Colors
               'primary': '#F8FAFC',        // Light background (slate-50)
               'secondary': '#FFFFFF',      // Light secondary/card (white)
-              'accent': '#181C14',         // Light accent (sky-500)
+              'accent': '#000000',         // Light accent (sky-500)
               'accent-hover': '#181C14',   // Light accent hover (sky-600)
               'text-primary': '#38BDF8',   // Light text (slate-900)
               'text-secondary': '#181C14', // Light muted text (slate-600)
@@ -24,22 +24,55 @@
               // Dark Theme Colors
               'primary-dark': '#181C14',      // slate-900
               'secondary-dark': '#1E201E',    // slate-800
-              'accent-dark': '#38BDF8',       // sky-400
+              'accent-dark': '#94B4C1',       // sky-400
               'accent-hover-dark': '#4B70F5', // sky-500
               'text-primary-dark': '#F1F5F9', // slate-100
               'text-secondary-dark': '#F1F5F9',// slate-400
             },
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              sans: [
+                'Inter',
+                'ui-sans-serif',
+                'system-ui',
+                'Segoe UI',
+                'Roboto',
+                'Helvetica Neue',
+                'Arial',
+                'Noto Sans',
+                'Liberation Sans',
+                'sans-serif',
+                'Apple Color Emoji',
+                'Segoe UI Emoji',
+                'Segoe UI Symbol',
+                'Noto Color Emoji'
+              ],
+              serif: [
+                'ui-serif',
+                'Georgia',
+                'Cambria',
+                'Times New Roman',
+                'Times',
+                'serif'
+              ],
+              mono: [
+                'ui-monospace',
+                'SFMono-Regular',
+                'Menlo',
+                'Monaco',
+                'Consolas',
+                'Liberation Mono',
+                'Courier New',
+                'monospace'
+              ]
             },
             animation: {
-              'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+              'fade-in-up': 'fadeInUp 0.9s ease-out forwards',
               'pulse-slow': 'pulse 5.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             },
             keyframes: {
               fadeInUp: {
-                '0%': { opacity: '15', transform: 'translateY(5px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
+                '0%': { opacity: '6', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(5px)' },
               },
             }
           }
@@ -79,7 +112,7 @@
 
     /* Themed text selection */
     ::selection {
-      background-color: #0EA5E9; /* accent */
+      background-color: #94B4C1; /* accent */
       color: #FFFFFF; /* white */
     }
     .dark ::selection {
@@ -114,7 +147,7 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="index.js"></script>
+  <script type="module" crossorigin src="index.tsx"></script>
 </head>
   <body class="bg-primary dark:bg-primary-dark text-text-primary dark:text-text-primary-dark font-sans transition-colors duration-300">
     <div id="root"></div>
