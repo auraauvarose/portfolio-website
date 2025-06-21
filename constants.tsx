@@ -69,7 +69,7 @@ export const PERSONAL_INFO: PersonalInfo = {
     email: "auraauvaroseendica@gmail.com",
     github: "https://github.com/auraauvarose",
   },
-  cvUrl: "/assets/VISI DAN MISI TK KRISTEN ASIH.pdf", // Placeholder
+  cvUrl: "#", // Placeholder
 };
 
 export const NAV_ITEMS: NavItem[] = [

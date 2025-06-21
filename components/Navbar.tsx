@@ -132,3 +132,4 @@ const Navbar: React.FC<NavbarProps> = ({ navItems, name, navbarName, activeSecti
 };
 
 export default Navbar;
+

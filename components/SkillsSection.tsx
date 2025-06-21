@@ -116,3 +116,5 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ id, skillsData }) => {
 };
 
 export default SkillsSection;
+// bagian ini adalah bagian akhir dari komponen SkillsSection yang mengelola modal dan interaksi pengguna
+// yang berkaitan dengan keterampilan yang ditampilkan.
